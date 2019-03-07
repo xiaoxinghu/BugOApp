@@ -18,10 +18,8 @@ func submit(username: String,
         throw DataError.timeout
     }
     q.async {
-        print("this is from the background thread: \(Thread.current)")
         Thread.sleep(forTimeInterval: 2)
         DispatchQueue.main.async {
-            print("this is from the main thread: \(Thread.current)")
             if password.isEmpty {
                 completion(.failed("password can't be empty"))
             } else {
