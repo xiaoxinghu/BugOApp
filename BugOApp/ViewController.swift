@@ -1,7 +1,15 @@
 import UIKit
 
+enum State {
+    case initial
+    case pending
+    case success
+    case error(String)
+}
+
 class ViewController: UIViewController {
 
+    var currentState: State = .initial
 
     var spinner = UIAlertController(title: nil, message: "Logging in...", preferredStyle: .alert)
 
@@ -26,25 +34,45 @@ class ViewController: UIViewController {
         login(username: username, password: password)
     }
 
+    func setState(nextState: State) {
+        // reset the UI
+        toggleSpinner(false)
+        message.isHidden = true
+        loginButton.setTitle("login", for: .normal)
+        // ---
+
+        currentState = nextState
+        switch nextState {
+        case .initial: break
+        case .pending:
+            toggleSpinner(true)
+        case .success:
+            show(message: "login success", color: .green)
+        case .error(let msg):
+            show(message: "ERROR: \(msg)", color: .red)
+            loginButton.setTitle("retry", for: .normal)
+        }
+    }
+
     func login(username: String, password: String) {
-        toggleSpinner(true)
+        if case State.pending = currentState {
+            // don't allow to submit twice
+            return
+        }
+        setState(nextState: .pending)
         do {
             try submit(username: username, password: password) { result in
-                self.toggleSpinner(false)
                 switch result {
                 case .ok:
-                    self.show(message: "login success", color: .green)
+                    self.setState(nextState: .success)
                 case .failed(let msg):
-                    self.show(message: "failed to login: \(msg), please retry", color: .orange)
-                    self.loginButton.setTitle("retry", for: .normal)
+                    self.setState(nextState: .error("failed to login: \(msg), please retry"))
                 }
             }
         } catch DataError.timeout {
-            show(message: "timed out, please retry", color: .red)
-            loginButton.setTitle("retry", for: .normal)
+            setState(nextState: .error("timed out, please retry"))
         } catch {
-            show(message: "unkown error, please retry", color: .red)
-            loginButton.setTitle("retry", for: .normal)
+            setState(nextState: .error("unkown error, please retry"))
         }
     }
 
