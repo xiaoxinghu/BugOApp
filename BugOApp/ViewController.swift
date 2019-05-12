@@ -48,6 +48,8 @@ class ViewController: UIViewController {
             toggleSpinner(true)
         case .success:
             show(message: "login success", color: .green)
+            let accountsView = storyboard!.instantiateViewController(withIdentifier: "accountsView")
+            present(accountsView, animated: true, completion: nil)
         case .error(let msg):
             show(message: "ERROR: \(msg)", color: .red)
             loginButton.setTitle("retry", for: .normal)
