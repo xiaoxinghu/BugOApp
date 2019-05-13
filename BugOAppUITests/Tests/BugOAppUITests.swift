@@ -15,20 +15,20 @@ class BugOAppUITests: XCTestCase {
     }
 
     func testAccountsPageShouldShowMyName() {
-        fatalError("Implement Me")
+        XCTFail("TODO: Implement Me")
     }
 
     func testLogout() {
-        fatalError("Implement Me")
+        XCTFail("TODO: Implement Me")
     }
 
     // MARK: alternative flows
     func testLoginWithEmptyUsername() {
-        fatalError("Implement Me")
+        XCTFail("TODO: Implement Me")
     }
 
     func testLoginTimedOut() {
-        fatalError("Implement Me")
+        XCTFail("TODO: Implement Me")
     }
 
 }
