@@ -13,12 +13,14 @@ class AccountsView: UITableViewController {
     let data: [(String, String)] = [
         ("Checking", "$508.4"),
         ("Credit Card", "-$305.8"),
-        ("Saving", "$99999"),
+        ("Saving", "$999.o9"),
     ]
+
+    var user: String!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        title = "\(user!)'s Accounts"
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -89,5 +91,8 @@ class AccountsView: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    @IBAction func logout(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
 
 }

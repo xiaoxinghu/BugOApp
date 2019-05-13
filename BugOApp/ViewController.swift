@@ -34,6 +34,8 @@ class ViewController: UIViewController {
         login(username: username, password: password)
     }
 
+    var username: String = ""
+
     func setState(nextState: State) {
         // reset the UI
         toggleSpinner(false)
@@ -48,8 +50,10 @@ class ViewController: UIViewController {
             toggleSpinner(true)
         case .success:
             show(message: "login success", color: .green)
-            let accountsView = storyboard!.instantiateViewController(withIdentifier: "accountsView")
-            present(accountsView, animated: true, completion: nil)
+            let navView = storyboard!.instantiateViewController(withIdentifier: "accountsView") as! UINavigationController
+            let accountsView = navView.topViewController as! AccountsView
+            accountsView.user = username
+            present(navView, animated: true, completion: nil)
         case .error(let msg):
             show(message: "ERROR: \(msg)", color: .red)
             loginButton.setTitle("retry", for: .normal)
@@ -64,6 +68,7 @@ class ViewController: UIViewController {
         setState(nextState: .pending)
         do {
             try submit(username: username, password: password) { result in
+                self.username = username
                 switch result {
                 case .ok:
                     self.setState(nextState: .success)

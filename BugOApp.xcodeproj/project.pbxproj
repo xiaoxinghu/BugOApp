@@ -13,8 +13,20 @@
 		A71356E92230B058001798F5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A71356E82230B058001798F5 /* Assets.xcassets */; };
 		A71356EC2230B058001798F5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A71356EA2230B058001798F5 /* LaunchScreen.storyboard */; };
 		A71356F42230B710001798F5 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71356F32230B710001798F5 /* Data.swift */; };
+		A77820BD22891B080088D82E /* LoginPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77820BC22891B080088D82E /* LoginPage.swift */; };
 		A791F1942288DA1A0087E8B4 /* AccountsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A791F1932288DA1A0087E8B4 /* AccountsView.swift */; };
+		A791F19E2288DCA80087E8B4 /* BugOAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A791F19D2288DCA80087E8B4 /* BugOAppUITests.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		A791F1A02288DCA80087E8B4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A71356D62230B055001798F5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A71356DD2230B055001798F5;
+			remoteInfo = BugOApp;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		A71356DE2230B055001798F5 /* BugOApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BugOApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -25,11 +37,22 @@
 		A71356EB2230B058001798F5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A71356ED2230B058001798F5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A71356F32230B710001798F5 /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
+		A77820BC22891B080088D82E /* LoginPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPage.swift; sourceTree = "<group>"; };
 		A791F1932288DA1A0087E8B4 /* AccountsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsView.swift; sourceTree = "<group>"; };
+		A791F19B2288DCA80087E8B4 /* BugOAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BugOAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A791F19D2288DCA80087E8B4 /* BugOAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BugOAppUITests.swift; sourceTree = "<group>"; };
+		A791F19F2288DCA80087E8B4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		A71356DB2230B055001798F5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A791F1982288DCA80087E8B4 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -43,6 +66,7 @@
 			isa = PBXGroup;
 			children = (
 				A71356E02230B055001798F5 /* BugOApp */,
+				A791F19C2288DCA80087E8B4 /* BugOAppUITests */,
 				A71356DF2230B055001798F5 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -51,6 +75,7 @@
 			isa = PBXGroup;
 			children = (
 				A71356DE2230B055001798F5 /* BugOApp.app */,
+				A791F19B2288DCA80087E8B4 /* BugOAppUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -68,6 +93,32 @@
 				A791F1932288DA1A0087E8B4 /* AccountsView.swift */,
 			);
 			path = BugOApp;
+			sourceTree = "<group>";
+		};
+		A77820BE22892E570088D82E /* Pages */ = {
+			isa = PBXGroup;
+			children = (
+				A77820BC22891B080088D82E /* LoginPage.swift */,
+			);
+			path = Pages;
+			sourceTree = "<group>";
+		};
+		A77820BF22892E620088D82E /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				A791F19D2288DCA80087E8B4 /* BugOAppUITests.swift */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
+		A791F19C2288DCA80087E8B4 /* BugOAppUITests */ = {
+			isa = PBXGroup;
+			children = (
+				A77820BE22892E570088D82E /* Pages */,
+				A77820BF22892E620088D82E /* Tests */,
+				A791F19F2288DCA80087E8B4 /* Info.plist */,
+			);
+			path = BugOAppUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -90,18 +141,40 @@
 			productReference = A71356DE2230B055001798F5 /* BugOApp.app */;
 			productType = "com.apple.product-type.application";
 		};
+		A791F19A2288DCA80087E8B4 /* BugOAppUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A791F1A22288DCA80087E8B4 /* Build configuration list for PBXNativeTarget "BugOAppUITests" */;
+			buildPhases = (
+				A791F1972288DCA80087E8B4 /* Sources */,
+				A791F1982288DCA80087E8B4 /* Frameworks */,
+				A791F1992288DCA80087E8B4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A791F1A12288DCA80087E8B4 /* PBXTargetDependency */,
+			);
+			name = BugOAppUITests;
+			productName = BugOAppUITests;
+			productReference = A791F19B2288DCA80087E8B4 /* BugOAppUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		A71356D62230B055001798F5 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1010;
+				LastSwiftUpdateCheck = 1020;
 				LastUpgradeCheck = 1010;
 				ORGANIZATIONNAME = huxiaoxing;
 				TargetAttributes = {
 					A71356DD2230B055001798F5 = {
 						CreatedOnToolsVersion = 10.1;
+					};
+					A791F19A2288DCA80087E8B4 = {
+						CreatedOnToolsVersion = 10.2.1;
+						TestTargetID = A71356DD2230B055001798F5;
 					};
 				};
 			};
@@ -119,6 +192,7 @@
 			projectRoot = "";
 			targets = (
 				A71356DD2230B055001798F5 /* BugOApp */,
+				A791F19A2288DCA80087E8B4 /* BugOAppUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -131,6 +205,13 @@
 				A71356EC2230B058001798F5 /* LaunchScreen.storyboard in Resources */,
 				A71356E92230B058001798F5 /* Assets.xcassets in Resources */,
 				A71356E72230B055001798F5 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A791F1992288DCA80087E8B4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -148,7 +229,24 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		A791F1972288DCA80087E8B4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A77820BD22891B080088D82E /* LoginPage.swift in Sources */,
+				A791F19E2288DCA80087E8B4 /* BugOAppUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A791F1A12288DCA80087E8B4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A71356DD2230B055001798F5 /* BugOApp */;
+			targetProxy = A791F1A02288DCA80087E8B4 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		A71356E52230B055001798F5 /* Main.storyboard */ = {
@@ -322,6 +420,46 @@
 			};
 			name = Release;
 		};
+		A791F1A32288DCA80087E8B4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3NQDL3JPMA;
+				INFOPLIST_FILE = BugOAppUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.huxiaoxing.BugOAppUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = BugOApp;
+			};
+			name = Debug;
+		};
+		A791F1A42288DCA80087E8B4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3NQDL3JPMA;
+				INFOPLIST_FILE = BugOAppUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.huxiaoxing.BugOAppUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = BugOApp;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -339,6 +477,15 @@
 			buildConfigurations = (
 				A71356F12230B058001798F5 /* Debug */,
 				A71356F22230B058001798F5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A791F1A22288DCA80087E8B4 /* Build configuration list for PBXNativeTarget "BugOAppUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A791F1A32288DCA80087E8B4 /* Debug */,
+				A791F1A42288DCA80087E8B4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
